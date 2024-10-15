@@ -1,17 +1,24 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+
 import Sample2_class from './component/Sample2'
 import Sample1_class from './component/sample1'
+import Layout from './component/Layout'
+import Home from './component/Home'
+import Contact from './component/Contact'
+import { BrowserRouter,Routes,Route } from 'react-router-dom'
 
 function App() {
  return(
   <>
-  <div>
-    <Sample2_class/>
-    <Sample1_class color='green'/>
-  </div>
+  <BrowserRouter>
+  <Routes>
+    <Route path='/'element={<Layout/>}>
+    <Route index element={<Home/>}/>
+    <Route path='contact' element={<Contact/>}/>
+
+
+    </Route>
+  </Routes>
+  </BrowserRouter>
   </>
  )
 }
